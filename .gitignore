@@ -2,6 +2,7 @@
 .allure/
 .gradle/
 .gradle
+build.gradle
 allure-results/
 gradle/
 build/
