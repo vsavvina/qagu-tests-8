@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.text;
 
-
 import java.io.File;
 
 public class PracticeForm {
@@ -59,7 +58,6 @@ public class PracticeForm {
         $(byXpath("//*[@id=\"city\"]/div/div[2]/div")).click();
         $(byText(city)).click();
         $("#submit").click();
-        //sleep(3000);
 
         $(".modal-content").shouldBe(Condition.visible);
         $x("//td[text()='Student Name']/following-sibling::td").shouldHave(text(name + " " + surname));
