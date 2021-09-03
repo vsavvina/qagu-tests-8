@@ -58,8 +58,8 @@ public class PracticeForm {
         $(byXpath("//*[@id=\"city\"]/div/div[2]/div")).click();
         $(byText(city)).click();
         $("#submit").click();
-
         $(".modal-content").shouldBe(Condition.visible);
+        
         $x("//td[text()='Student Name']/following-sibling::td").shouldHave(text(name + " " + surname));
         $x("//td[text()='Student Email']/following-sibling::td").shouldHave(text(email));
         $x("//td[text()='Gender']/following-sibling::td").shouldHave(text(gander));
