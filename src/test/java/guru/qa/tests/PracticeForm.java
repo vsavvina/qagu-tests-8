@@ -29,7 +29,7 @@ public class PracticeForm {
         String hobbies1 = "Sports";
         String hobbies2 = "Reading";
         String hobbies3 = "Music";
-        String pathpoto = "src/test/java/attachments/foto.jpg";
+        String pathpoto = "src/test/java/resource/foto.jpg";
         String photo = "foto.jpg";
         String adress = "15 Zhelyabova Street, apartment 18, Voronezh, Russia";
         String state = "Haryana";
