@@ -1,6 +1,7 @@
 .idea
 .allure/
 .gradle/
+.gradle
 allure-results/
 gradle/
 build/
