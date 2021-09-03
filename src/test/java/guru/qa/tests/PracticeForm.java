@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.files.DownloadActions.click;
 
 import java.io.File;
 
@@ -45,7 +46,7 @@ public class PracticeForm {
         $(By.id("dateOfBirthInput")).click();
         $(byText("February")).click();
         $(byText("1998")).click();
-        $(byXpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[5]")).click();
+        $(byText("19")).click();
         $("#subjectsInput").setValue(subjects1).pressEnter().setValue(subjects2).pressEnter();
         $(byText(hobbies1)).click();
         $(byText(hobbies2)).click();
