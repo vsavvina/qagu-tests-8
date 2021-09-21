@@ -1,12 +1,16 @@
 package guru.qa.tests;
 
+import com.github.javafaker.Faker;
+
 public class TestData {
+    Faker faker = new Faker();
+
     public static String
-            name = "Viktoria",
-            surname = "Savvina",
-            email = "vsavvina@gu.com",
+            //name = "Viktoria",
+            //surname = "Savvina",
+            //email = "vsavvina@gu.com",
             gander = "Female",
-            phonenumber = "9639689061",
+            //phonenumber = "9639689061",
             month = "February",
             year = "1998",
             day = "19",
@@ -17,7 +21,7 @@ public class TestData {
             hobbies3 = "Music",
             pathpoto = "src/test/java/resource/foto.jpg",
             photo = "foto.jpg",
-            adress = "15 Zhelyabova Street, apartment 18, Voronezh, Russia",
+            //adress = "15 Zhelyabova Street, apartment 18, Voronezh, Russia",
             state = "Haryana",
             city = "Panipat";
 }

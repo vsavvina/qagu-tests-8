@@ -18,6 +18,10 @@ public class UserDataPage {
             emailInput = $("#userEmail"),
             ganderInput = $(byText(gander)),
             phoneNumberInput = $(By.id("userNumber")),
+            birthInput = $("#dateOfBirthInput"),
+            birthMonthInput = $(".react-datepicker__month-select"),
+            birthYearInput = $(".react-datepicker__year-select"),
+            birthDayInput = $(".react-datepicker__day--0%s:not(.react-datepicker__day--outside-month)"),
             subjectInput = $("#subjectsInput"),
             hobbies1Input = $("#hobbiesWrapper").$(byText(hobbies1)),
             hobbies2Input = $("#hobbiesWrapper").$(byText(hobbies2)),
@@ -45,9 +49,18 @@ public class UserDataPage {
     public void typeGander() {
         ganderInput.click();
     }
+
     public UserDataPage typePhoneNumber(String value) {
         phoneNumberInput.setValue(value);
         return this;
+    }
+    public void setDate(String day, String month, String year) {
+        birthInput.click();
+        birthMonthInput.selectOption(month);
+        birthYearInput.selectOption(year);
+            String selector1 = ".react-datepicker__day--0%s:not(.react-datepicker__day--outside-month)";
+            String formatedSelector = String.format(selector1, day);
+        $(formatedSelector).click();
     }
     public UserDataPage typeSubject(String value) {
         subjectInput.setValue(value).pressEnter();
