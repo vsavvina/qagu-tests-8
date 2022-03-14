@@ -8,7 +8,6 @@ public class TestData {
     public static String
             //name = "Viktoria",
             //surname = "Savvina",
-            //email = "vsavvina@gu.com",
             gander = "Female",
             //phonenumber = "9639689061",
             month = "February",
