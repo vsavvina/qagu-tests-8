@@ -6,9 +6,6 @@ public class TestData {
     Faker faker = new Faker();
 
     public static String
-            //name = "Viktoria",
-            //surname = "Savvina",
-            //email = "vsavvina@gu.com",
             gander = "Female",
             //phonenumber = "9639689061",
             month = "February",

@@ -43,10 +43,12 @@ public class PracticeForm {
         $("#userEmail").setValue(email);
         $(byText(gander)).click();
         $(By.id("userNumber")).setValue(phomenumber);
+
         $(By.id("dateOfBirthInput")).click();
-        $(byText("February")).click();
+        $(byText("February")).click(); // %s
         $(byText("1998")).click();
         $(byText("19")).click();
+
         $("#subjectsInput").setValue(subjects1).pressEnter().setValue(subjects2).pressEnter();
         $(byText(hobbies1)).click();
         $(byText(hobbies2)).click();
