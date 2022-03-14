@@ -7,7 +7,6 @@ public class TestData {
 
     public static String
             //name = "Viktoria",
-            //surname = "Savvina",
             gander = "Female",
             //phonenumber = "9639689061",
             month = "February",
