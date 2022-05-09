@@ -1,21 +1,27 @@
 package guru.qa.tests;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
+import helpers.Attach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.files.DownloadActions.click;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+
 
 import java.io.File;
+
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeForm {
     @BeforeAll
     static void beforeAll() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.startMaximized = true;
     }
 
@@ -78,5 +84,9 @@ public class PracticeForm {
         @AfterAll
         static void afterAll(){
             System.out.println("Test passed");
+            Attach.screenshotAs("Last screenshot");
+            Attach.pageSource();
+            Attach.browserConsoleLogs();
+            Attach.addVideo();
         }
 }
