@@ -88,7 +88,7 @@ public class PracticeForm {
         $x("//td[text()='State and City']/following-sibling::td").shouldHave(text(state + " " + city));
     }
     @AfterEach
-        static void tearDown(){
+        public void tearDown(){
             System.out.println("Test passed");
             Attach.screenshotAs("Last screenshot");
             Attach.pageSource();
