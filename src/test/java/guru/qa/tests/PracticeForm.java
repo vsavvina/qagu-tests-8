@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import helpers.Attach;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -86,8 +87,8 @@ public class PracticeForm {
         $x("//td[text()='Address']/following-sibling::td").shouldHave(text(adress));
         $x("//td[text()='State and City']/following-sibling::td").shouldHave(text(state + " " + city));
     }
-        @AfterAll
-        static void afterAll(){
+    @AfterEach
+        static void tearDown(){
             System.out.println("Test passed");
             Attach.screenshotAs("Last screenshot");
             Attach.pageSource();
