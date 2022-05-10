@@ -5,6 +5,7 @@ import guru.qa.page.SubmittingFormPage;
 import guru.qa.page.UserDataPage;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selenide.open;
 import static guru.qa.tests.TestData.*;
 
 public class PracticeFormWithPageObjects extends TestBase {
@@ -20,7 +21,6 @@ public class PracticeFormWithPageObjects extends TestBase {
 
     @Test
     void practiceFormTests() {
-
         userDataPage.typeName(name);
         userDataPage.typeSurename(surname);
         userDataPage.typeEmail(email);

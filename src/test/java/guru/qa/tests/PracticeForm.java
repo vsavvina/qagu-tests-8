@@ -3,7 +3,6 @@ package guru.qa.tests;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import helpers.Attach;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -24,10 +23,13 @@ public class PracticeForm {
     @BeforeAll
     static void beforeAll() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.startMaximized = true;
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
+
+        Configuration.browserCapabilities = capabilities;
+        Configuration.startMaximized = true;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
