@@ -35,7 +35,7 @@ public class PracticeForm {
     }
 
     @Test
-    @Tag("properties1")
+  //  @Tag("properties1")
     void practiceFormTests() {
         String name = "Viktoria";
         String surname = "Savvina";
