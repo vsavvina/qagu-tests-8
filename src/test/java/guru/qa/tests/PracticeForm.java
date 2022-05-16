@@ -19,11 +19,12 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
+import org.openqa.selenium.MutableCapabilities;
 
 public class PracticeForm {
     @BeforeAll
     static void beforeAll() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        //SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -31,13 +32,13 @@ public class PracticeForm {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.browserSize = "1139x1004";
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     @Test
-  //  @Tag("properties1")
     void practiceFormTests() {
-        String name = "Viktoria";
+        String name = "Viktoriaaa";
         String surname = "Savvina";
         String email = "vsavvina@gu.com";
         String gander = "Female";
@@ -51,9 +52,10 @@ public class PracticeForm {
         String photo = "foto.jpg";
         String adress = "15 Zhelyabova Street, apartment 18, Voronezh, Russia";
         String state = "Haryana";
-        String city = "Panipat";
+        String city = "Karnal";
 
         open("https://demoqa.com/automation-practice-form");
+        $("#submit").scrollIntoView(true);
         $("#firstName").setValue(name);
         $("#lastName").setValue(surname);
         $("#userEmail").setValue(email);
@@ -72,7 +74,6 @@ public class PracticeForm {
         $("#submit").scrollIntoView(true);
         $("#uploadPicture").uploadFile(new File(pathpoto));
         $("#currentAddress").setValue(adress);
-        $("#submit").scrollIntoView(true);
         $(byXpath("//*[@id=\"state\"]/div/div[2]/div")).click();
         $(byText(state)).click();
         $(byXpath("//*[@id=\"city\"]/div/div[2]/div")).click();

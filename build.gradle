@@ -38,28 +38,13 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
-    systemProperties(System.getProperties())
+    //systemProperties(System.getProperties())
     useJUnitPlatform()
 
     testLogging {
         lifecycle {
-//            events "started", "failed"
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
     }
 }
-//task properties_tests(type: Test) {
- //   systemProperty("browserSize", System.getProperty("browserSize", "400x400"))
-  //  useJUnitPlatform {
- //       includeTags "properties"
- //   }
-//}
-
-//task many_tags_tests(type: Test) {
-   // useJUnitPlatform {
-    //    includeTags "properties1"//далее для нескольких тестов можем вписать теги
-        //includeTags "smoke"// чтобы запускать несколько за раз
-       // excludeTags "prod"//помимо properties ещё smoke и prod. И далее так из дженкинса
-   // }
-//}
