@@ -58,8 +58,8 @@ task properties_tests(type: Test) {
 
 task many_tags_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "properties"//далее для нескольких тестов можем вписать теги
-        includeTags "smoke"// чтобы запускать несколько за раз
-        excludeTags "prod"//помимо properties ещё smoke и prod. И далее так из дженкинса
+        includeTags "properties1"//далее для нескольких тестов можем вписать теги
+        //includeTags "smoke"// чтобы запускать несколько за раз
+       // excludeTags "prod"//помимо properties ещё smoke и prod. И далее так из дженкинса
     }
 }

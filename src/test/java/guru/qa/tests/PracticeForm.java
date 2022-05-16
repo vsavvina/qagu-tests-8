@@ -5,6 +5,7 @@ import com.codeborne.selenide.Configuration;
 import helpers.Attach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -34,6 +35,7 @@ public class PracticeForm {
     }
 
     @Test
+    @Tag("properties1")
     void practiceFormTests() {
         String name = "Viktoria";
         String surname = "Savvina";

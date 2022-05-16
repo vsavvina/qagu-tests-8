@@ -4,33 +4,33 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class SystemPropertiesTests {
-    @Test
+   // @Test
     void someTest() {
         String value = System.getProperty("value");
         System.out.println(value);
         // null
     }
-    @Test
+   // @Test
     void someTest1() {
         String value = System.getProperty("value", "default_value");
         System.out.println(value);
         // default_value
     }
-    @Test
+   // @Test
     void someTest2() {
         System.setProperty("value", "another_value");
         String value = System.getProperty("value");
         System.out.println(value);
         // another_value
     }
-    @Test
+  //  @Test
     void someTest3() {
         System.setProperty("value", "another_value");
         String value = System.getProperty("value", "default_value");
         System.out.println(value);
         // another_value !
     }
-    @Test
+   // @Test
     @Tag("properties")
     void someTest4() {
         String value = System.getProperty("browser", "chrome");
@@ -41,7 +41,7 @@ public class SystemPropertiesTests {
         //  gradle clean properties_tests -Dbrowser=opera
         //  opera
     }
-    @Test
+   // @Test
     @Tag("properties")
     void someTest5() {
         String browser = System.getProperty("browser", "chrome");
