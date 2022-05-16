@@ -24,7 +24,7 @@ import org.openqa.selenium.MutableCapabilities;
 public class PracticeForm {
     @BeforeAll
     static void beforeAll() {
-        //SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
