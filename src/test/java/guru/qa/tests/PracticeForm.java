@@ -33,7 +33,7 @@ public class PracticeForm {
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
         //Configuration.browserSize = "1400x1050";
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     @Test
