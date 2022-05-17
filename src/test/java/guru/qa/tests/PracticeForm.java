@@ -38,8 +38,6 @@ public class PracticeForm {
         Configuration.browserCapabilities = capabilities;
         Configuration.browserSize = "2560x2048";
         Configuration.remote = format("https://%s:%s@%s", login, password, System.getProperty("url"));
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "91.0");
     }
     @Test
     void practiceFormTests() {
