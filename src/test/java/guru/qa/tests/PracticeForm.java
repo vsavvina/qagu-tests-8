@@ -22,7 +22,7 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static java.lang.String.format;
 
-@Tag("properties")
+//@Tag("properties")
 public class PracticeForm {
     public static CredentialsConfig credentials =
             ConfigFactory.create(CredentialsConfig.class);
