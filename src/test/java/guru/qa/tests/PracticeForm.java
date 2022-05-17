@@ -2,14 +2,17 @@ package guru.qa.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import guru.qa.tests.config.CredentialsConfig;
 import helpers.Attach;
-import org.junit.jupiter.api.AfterAll;
+import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 
@@ -17,17 +20,31 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
+import static java.lang.String.format;
 
+@Tag("properties")
 public class PracticeForm {
+
+    public static CredentialsConfig credentials =
+            ConfigFactory.create(CredentialsConfig.class);
+
+
     @BeforeAll
     static void beforeAll() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.startMaximized = true;
-    }
+        String login = credentials.login();
+        String password = credentials.password();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
 
+        Configuration.browserCapabilities = capabilities;
+        Configuration.browserSize = "2560x2048";
+        Configuration.remote = format("https://%s:%s@%s", login, password, System.getProperty("url"));
+    }
     @Test
     void practiceFormTests() {
-        String name = "Viktoria";
+        String name = "Viktoriaaa";
         String surname = "Savvina";
         String email = "vsavvina@gu.com";
         String gander = "Female";
@@ -41,7 +58,7 @@ public class PracticeForm {
         String photo = "foto.jpg";
         String adress = "15 Zhelyabova Street, apartment 18, Voronezh, Russia";
         String state = "Haryana";
-        String city = "Panipat";
+        String city = "Karnal";
 
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue(name);
@@ -62,14 +79,14 @@ public class PracticeForm {
         $("#submit").scrollIntoView(true);
         $("#uploadPicture").uploadFile(new File(pathpoto));
         $("#currentAddress").setValue(adress);
-        $("#submit").scrollIntoView(true);
         $(byXpath("//*[@id=\"state\"]/div/div[2]/div")).click();
         $(byText(state)).click();
         $(byXpath("//*[@id=\"city\"]/div/div[2]/div")).click();
         $(byText(city)).click();
+        $(byXpath("//*[@id=\"app\"]/footer/span")).scrollIntoView(true);
         $("#submit").click();
         $(".modal-content").shouldBe(Condition.visible);
-        
+
         $x("//td[text()='Student Name']/following-sibling::td").shouldHave(text(name + " " + surname));
         $x("//td[text()='Student Email']/following-sibling::td").shouldHave(text(email));
         $x("//td[text()='Gender']/following-sibling::td").shouldHave(text(gander));
@@ -81,12 +98,12 @@ public class PracticeForm {
         $x("//td[text()='Address']/following-sibling::td").shouldHave(text(adress));
         $x("//td[text()='State and City']/following-sibling::td").shouldHave(text(state + " " + city));
     }
-        @AfterAll
-        static void afterAll(){
+    @AfterEach
+        public void tearDown(){
             System.out.println("Test passed");
             Attach.screenshotAs("Last screenshot");
             Attach.pageSource();
             Attach.browserConsoleLogs();
             Attach.addVideo();
-        }
+    }
 }
