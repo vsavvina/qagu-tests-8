@@ -79,7 +79,7 @@ public class PracticeForm {
         $(byXpath("//*[@id=\"city\"]/div/div[2]/div")).click();
         $(byText(city)).click();
         $(byXpath("//*[@id=\"app\"]/footer/span")).scrollIntoView(true);
-        //$("#submit").click();
+        $("#submit").click();
         //$(".modal-content").shouldBe(Condition.visible);
         
        /* $x("//td[text()='Student Name']/following-sibling::td").shouldHave(text(name + " " + surname));
