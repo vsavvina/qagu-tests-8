@@ -80,9 +80,9 @@ public class PracticeForm {
         $(byText(city)).click();
         $(byXpath("//*[@id=\"app\"]/footer/span")).scrollIntoView(true);
         $("#submit").click();
-        //$(".modal-content").shouldBe(Condition.visible);
+        $(".modal-content").shouldBe(Condition.visible);
         
-       /* $x("//td[text()='Student Name']/following-sibling::td").shouldHave(text(name + " " + surname));
+        $x("//td[text()='Student Name']/following-sibling::td").shouldHave(text(name + " " + surname));
         $x("//td[text()='Student Email']/following-sibling::td").shouldHave(text(email));
         $x("//td[text()='Gender']/following-sibling::td").shouldHave(text(gander));
         $x("//td[text()='Mobile']/following-sibling::td").shouldHave(text(phomenumber));
@@ -91,7 +91,7 @@ public class PracticeForm {
         $x("//td[text()='Hobbies']/following-sibling::td").shouldHave(text(hobbies1 + ", " + hobbies2 + ", " + hobbies3));
         $x("//td[text()='Picture']/following-sibling::td").shouldHave(text(photo));
         $x("//td[text()='Address']/following-sibling::td").shouldHave(text(adress));
-        $x("//td[text()='State and City']/following-sibling::td").shouldHave(text(state + " " + city));*/
+        $x("//td[text()='State and City']/following-sibling::td").shouldHave(text(state + " " + city));
     }
     @AfterEach
         public void tearDown(){
