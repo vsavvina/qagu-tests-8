@@ -24,23 +24,22 @@ import static java.lang.String.format;
 
 @Tag("properties")
 public class PracticeForm {
-
     public static CredentialsConfig credentials =
             ConfigFactory.create(CredentialsConfig.class);
 
-
     @BeforeAll
-    static void beforeAll() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    public static void beforeAll() {
+        //SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         String login = credentials.login();
         String password = credentials.password();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-
         Configuration.browserCapabilities = capabilities;
         Configuration.browserSize = "2560x2048";
         Configuration.remote = format("https://%s:%s@%s", login, password, System.getProperty("url"));
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "91.0");
     }
     @Test
     void practiceFormTests() {
