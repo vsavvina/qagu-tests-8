@@ -18,7 +18,7 @@ public class PracticeFormWithPageObjects extends TestBase {
     public String phonenumber = faker.phoneNumber().subscriberNumber(10);
     public String address = faker.address().streetAddress();
 
-    @Test
+   // @Test
     void practiceFormTests() {
 
         userDataPage.typeName(name);
