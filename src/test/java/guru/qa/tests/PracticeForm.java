@@ -29,7 +29,7 @@ public class PracticeForm {
 
     @BeforeAll
     public static void beforeAll() {
-        //SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         String login = credentials.login();
         String password = credentials.password();
         DesiredCapabilities capabilities = new DesiredCapabilities();
