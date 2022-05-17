@@ -31,8 +31,8 @@ public class PracticeForm {
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.startMaximized = true;
-        //Configuration.browserSize = "1400x1050";
+        //Configuration.startMaximized = true;
+        Configuration.browserSize = "1400x1050";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
