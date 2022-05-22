@@ -45,7 +45,7 @@ public class IziTestForm {
         String photo = "foto.jpg";
         String adress = "15 Zhelyabova Street, apartment 18, Voronezh, Russia";
         String state = "NCR";
-        String city = "Panipat";
+        String city = "Delhi";
 
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue(name);
