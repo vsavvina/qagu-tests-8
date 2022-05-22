@@ -22,7 +22,7 @@ public class IziTestForm {
     @BeforeAll
     static void beforeAll() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.startMaximized = true;
+        Configuration.browserSize = "2560x2048";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
