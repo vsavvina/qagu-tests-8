@@ -11,7 +11,6 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
@@ -32,7 +31,7 @@ public class IziTestForm {
 
     @Test
     void practiceFormTests() {
-        String name = "Viktoria";
+        String name = "Viktoriaaa";
         String surname = "Savvina";
         String email = "vsavvina@gu.com";
         String gander = "Female";
