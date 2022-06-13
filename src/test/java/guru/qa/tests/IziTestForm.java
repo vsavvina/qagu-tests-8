@@ -5,6 +5,7 @@ import com.codeborne.selenide.Configuration;
 import helpers.Attach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -17,6 +18,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.step;
 
 public class IziTestForm {
     @BeforeAll
@@ -30,6 +32,13 @@ public class IziTestForm {
     }
 
     @Test
+    @DisplayName("Page can open")
+    void openTest() {
+        step("Open url 'https://sushiwok.ru/voronezh/menu/rolly/'", () ->
+                open("https://sushiwok.ru/voronezh/menu/rolly/"));
+    }
+
+    //@Test
     void practiceFormTests() {
         String name = "Viktoriaaa";
         String surname = "Savvina";
