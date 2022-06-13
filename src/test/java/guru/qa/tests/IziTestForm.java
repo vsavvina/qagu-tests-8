@@ -27,17 +27,17 @@ public class IziTestForm {
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
-    //@Test
+    @Test
     @DisplayName("Page can open")
     void openTest() {
-        step("Open url 'https://sushiwok.ru/voronezh/menu/rolly/'", () ->
-                open("https://sushiwok.ru/voronezh/menu/rolly/"));
+        step("Open url 'https://vk.com/'", () ->
+                open("https://vk.com/"));
     }
 
     @Test
-    @DisplayName("Page have text - Акции")
+    @DisplayName("Page have text - Sign in to VK")
     void stocksTest() {
-        step("Open url 'https://sushiwok.ru/voronezh/'", () ->
+        step("Open url 'https://vk.com/'", () ->
                 open("https://vk.com/"));
         step("Проверить наличие Логотипа ", () ->
                 $(byXpath("//*[@id=\"index_login\"]/div/div[2]")).shouldHave(text("Sign in to VK")));
