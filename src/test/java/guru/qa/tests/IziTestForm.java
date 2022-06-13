@@ -58,7 +58,7 @@ public class IziTestForm {
         step("Open url 'https://vk.com/'", () ->
                 open("https://vk.com/"));
         step("Проверить наличие версии для iOS ", () ->
-                $(byXpath("//*[@id=\"content\"]/div/div[1]/div/div[1]/div[3]/a[1]/button/span/span[2]")).shouldHave(text("VK for iOS")));
+                $(byXpath("//*[@id=\"content\"]/div/div[1]/div/div[1]/div[3]/a[2]/button/span")).shouldHave(text("VK for iOS")));
     }
 
     @Test
