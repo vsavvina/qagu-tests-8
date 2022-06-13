@@ -3,10 +3,7 @@ package guru.qa.tests;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import helpers.Attach;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -20,8 +17,8 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class IziTestForm {
-    @BeforeAll
-    static void beforeAll() {
+    @BeforeEach
+    public void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.browserSize = "2560x2048";
         DesiredCapabilities capabilities = new DesiredCapabilities();
