@@ -40,7 +40,7 @@ public class IziTestForm {
         step("Open url 'https://sushiwok.ru/voronezh/'", () ->
                 open("https://vk.com/"));
         step("Проверить наличие Логотипа ", () ->
-                $(By.id("index_login")).shouldHave(text("Вход ВКонтакте")));
+                $(byXpath("//*[@id=\"index_login\"]/div/div[2]")).shouldHave(text("Вход ВКонтакте")));
     }
 
     //@Test
