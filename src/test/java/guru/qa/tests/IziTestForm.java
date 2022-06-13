@@ -27,7 +27,7 @@ public class IziTestForm {
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
-    @Test
+    //@Test
     @DisplayName("Page can open")
     void openTest() {
         step("Open url 'https://sushiwok.ru/voronezh/menu/rolly/'", () ->
