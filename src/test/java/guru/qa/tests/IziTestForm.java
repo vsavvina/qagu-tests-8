@@ -36,11 +36,38 @@ public class IziTestForm {
 
     @Test
     @DisplayName("Page have text - Sign in to VK")
-    void stocksTest() {
+    void signTextTest() {
         step("Open url 'https://vk.com/'", () ->
                 open("https://vk.com/"));
-        step("Проверить наличие Логотипа ", () ->
+        step("Проверить наличие надписи ", () ->
                 $(byXpath("//*[@id=\"index_login\"]/div/div[2]")).shouldHave(text("Sign in to VK")));
+    }
+
+    @Test
+    @DisplayName("Page have text - VK for Android")
+    void versAndrTest() {
+        step("Open url 'https://vk.com/'", () ->
+                open("https://vk.com/"));
+        step("Проверить наличие версии для Android ", () ->
+                $(byXpath("//*[@id=\"content\"]/div/div[1]/div/div[1]/div[3]/a[1]/button/span/span[2]")).shouldHave(text("VK for Android")));
+    }
+
+    @Test
+    @DisplayName("Page have text - VK for iOS")
+    void versIosTest() {
+        step("Open url 'https://vk.com/'", () ->
+                open("https://vk.com/"));
+        step("Проверить наличие версии для iOS ", () ->
+                $(byXpath("//*[@id=\"content\"]/div/div[1]/div/div[1]/div[3]/a[1]/button/span/span[2]")).shouldHave(text("VK for iOS")));
+    }
+
+    @Test
+    @DisplayName("Page have text - Search")
+    void saerchTest() {
+        step("Open url 'https://vk.com/'", () ->
+                open("https://vk.com/"));
+        step("Проверить наличие поля для поиска", () ->
+                $(By.id("ts_wrap")).shouldBe(Condition.visible));
     }
 
     //@Test
