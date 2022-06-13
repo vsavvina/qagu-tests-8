@@ -24,7 +24,7 @@ public class IziTestForm {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     //@Test
