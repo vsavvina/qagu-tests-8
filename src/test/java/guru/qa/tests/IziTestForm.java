@@ -43,7 +43,7 @@ public class IziTestForm {
         step("Open url 'https://sushiwok.ru/voronezh/menu/rolly/'", () ->
                 open("https://sushiwok.ru/voronezh/menu/rolly/"));
         step("Проверить наличие Логотипа ", () ->
-                $(byClassName("main-menu__block main-menu__nav")).shouldHave(text("Акции")));
+                $(byXpath("//*[@id=\"root\"]/div/div[3]/div/div[4]/div[1]/a[1]")).shouldHave(text("Акции")));
     }
 
     //@Test
