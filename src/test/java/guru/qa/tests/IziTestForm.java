@@ -38,6 +38,15 @@ public class IziTestForm {
                 open("https://sushiwok.ru/voronezh/menu/rolly/"));
     }
 
+    @Test
+    @DisplayName("Page have text - Акции")
+    void stocksTest() {
+        step("Open url 'https://sushiwok.ru/voronezh/menu/rolly/'", () ->
+                open("https://sushiwok.ru/voronezh/menu/rolly/"));
+        step("Проверить наличие Логотипа ", () ->
+                $x("//*[@id=\"root\"]/div/div[3]/div/div[4]/div[1]").shouldHave(text("Акции")));
+    }
+
     //@Test
     void practiceFormTests() {
         String name = "Viktoriaaa";
