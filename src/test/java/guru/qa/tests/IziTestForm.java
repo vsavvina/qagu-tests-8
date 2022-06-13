@@ -34,7 +34,7 @@ public class IziTestForm {
                 open("https://sushiwok.ru/voronezh/menu/rolly/"));
     }
 
-    @Test
+    //@Test
     @DisplayName("Page have text - Акции")
     void stocksTest() {
         step("Open url 'https://sushiwok.ru/voronezh/menu/rolly/'", () ->
@@ -43,7 +43,7 @@ public class IziTestForm {
                 $(byXpath("//*[@id=\"root\"]/div/div[3]/div/div[4]/div[1]/a[1]")).shouldHave(text("Акции")));
     }
 
-    //@Test
+    @Test
     void practiceFormTests() {
         String name = "Viktoriaaa";
         String surname = "Savvina";
