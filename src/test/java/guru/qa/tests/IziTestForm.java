@@ -24,7 +24,7 @@ public class IziTestForm {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     //@Test
@@ -34,16 +34,16 @@ public class IziTestForm {
                 open("https://sushiwok.ru/voronezh/menu/rolly/"));
     }
 
-    //@Test
+    @Test
     @DisplayName("Page have text - Акции")
     void stocksTest() {
-        step("Open url 'https://sushiwok.ru/voronezh/menu/rolly/'", () ->
-                open("https://sushiwok.ru/voronezh/menu/rolly/"));
+        step("Open url 'https://sushiwok.ru/voronezh/'", () ->
+                open("https://vk.com/"));
         step("Проверить наличие Логотипа ", () ->
-                $(byXpath("//*[@id=\"root\"]/div/div[3]/div/div[4]/div[1]/a[1]")).shouldHave(text("Акции")));
+                $(By.id("index_login")).shouldHave(text("Вход ВКонтакте")));
     }
 
-    @Test
+    //@Test
     void practiceFormTests() {
         String name = "Viktoriaaa";
         String surname = "Savvina";
