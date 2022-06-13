@@ -15,8 +15,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
@@ -44,7 +43,7 @@ public class IziTestForm {
         step("Open url 'https://sushiwok.ru/voronezh/menu/rolly/'", () ->
                 open("https://sushiwok.ru/voronezh/menu/rolly/"));
         step("Проверить наличие Логотипа ", () ->
-                $x("//*[@id=\"root\"]/div/div[3]/div/div[4]/div[1]").shouldHave(text("Акции")));
+                $(byClassName("main-menu__block main-menu__nav")).shouldHave(text("Акции")));
     }
 
     //@Test
