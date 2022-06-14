@@ -3,9 +3,7 @@ package guru.qa.tests;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import helpers.Attach;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -14,15 +12,15 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.step;
 
 public class IziTestForm {
-    @BeforeAll
-    static void beforeAll() {
+    @BeforeEach
+    public void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.startMaximized = true;
+        Configuration.browserSize = "2560x2048";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
@@ -30,6 +28,49 @@ public class IziTestForm {
     }
 
     @Test
+    @DisplayName("Page can open")
+    void openTest() {
+        step("Open url 'https://vk.com/'", () ->
+                open("https://vk.com/"));
+    }
+
+    @Test
+    @DisplayName("Page have text - Sign in to VK")
+    void signTextTest() {
+        step("Open url 'https://vk.com/'", () ->
+                open("https://vk.com/"));
+        step("Проверить наличие надписи ", () ->
+                $(byXpath("//*[@id=\"index_login\"]/div/div[2]")).shouldHave(text("Sign in to VK")));
+    }
+
+    @Test
+    @DisplayName("Page have text - VK for Android")
+    void versAndrTest() {
+        step("Open url 'https://vk.com/'", () ->
+                open("https://vk.com/"));
+        step("Проверить наличие версии для Android ", () ->
+                $(byXpath("//*[@id=\"content\"]/div/div[1]/div/div[1]/div[3]/a[1]/button/span/span[2]")).shouldHave(text("VK for Android")));
+    }
+
+    @Test
+    @DisplayName("Page have text - VK for iOS")
+    void versIosTest() {
+        step("Open url 'https://vk.com/'", () ->
+                open("https://vk.com/"));
+        step("Проверить наличие версии для iOS ", () ->
+                $(byXpath("//*[@id=\"content\"]/div/div[1]/div/div[1]/div[3]/a[2]/button/span")).shouldHave(text("VK for iOS")));
+    }
+
+    @Test
+    @DisplayName("Page have text - Search")
+    void saerchTest() {
+        step("Open url 'https://vk.com/'", () ->
+                open("https://vk.com/"));
+        step("Проверить наличие поля для поиска", () ->
+                $(By.id("ts_wrap")).shouldBe(Condition.visible));
+    }
+
+    //@Test
     void practiceFormTests() {
         String name = "Viktoriaaa";
         String surname = "Savvina";
@@ -44,8 +85,8 @@ public class IziTestForm {
         String pathpoto = "src/test/java/resource/foto.jpg";
         String photo = "foto.jpg";
         String adress = "15 Zhelyabova Street, apartment 18, Voronezh, Russia";
-        String state = "Haryana";
-        String city = "Panipat";
+        String state = "NCR";
+        String city = "Delhi";
 
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue(name);
